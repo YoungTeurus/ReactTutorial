@@ -3,7 +3,11 @@ import TodoList from './components/TodoList';
 import Context from "./context";
 import Loader from "./components/Loader";
 
-const AddTodo = React.lazy(() => import('./components/AddTodo'))
+const AddTodo = React.lazy(() => new Promise( resolve => {
+    setTimeout(()=>{
+        resolve(import('./components/AddTodo'))
+    }, 3000)
+}))
 
 function App() {
 
