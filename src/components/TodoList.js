@@ -3,34 +3,34 @@ import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
 const styles = {
-    ul : {
-        listStyle: 'none',
-        margin: 0,
-        padding: 0
-    }
+  ul: {
+    listStyle: 'none',
+    margin: 0,
+    padding: 0
+  }
 }
 
-function TodoList(props){
-    return(
-        <ul style={styles.ul}>
-            {props.todos.map(
-                    (todo, index) => {
-                        return <TodoItem
-                            key={todo.id}
-                            index={index+1}
-                            todo={todo}
-                            onChange={props.onToggle}
-                        />
-                    }
-                )
+function TodoList(props) {
+  return (
+      <ul style={styles.ul}>
+        {props.todos.map(
+            (todo, index) => {
+              return <TodoItem
+                  key={todo.id}
+                  index={index + 1}
+                  todo={todo}
+                  onChange={props.onToggle}
+              />
             }
-        </ul>
-    )
+        )
+        }
+      </ul>
+  )
 }
 
 TodoList.propTypes = {
-    todos: PropTypes.arrayOf(PropTypes.object).isRequired,
-    onToggle: PropTypes.func.isRequired
+  todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onToggle: PropTypes.func.isRequired
 }
 
 export default TodoList;
